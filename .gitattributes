@@ -1,0 +1,2 @@
+kallisto_CAR_custom_index.idx filter=lfs diff=lfs merge=lfs -text
+hg19.annot.cdna.CAR.custom filter=lfs diff=lfs merge=lfs -text
