@@ -1,0 +1,13 @@
+{
+	"n_targets": 41972,
+	"n_bootstraps": 0,
+	"n_processed": 983118,
+	"n_pseudoaligned": 527828,
+	"n_unique": 294720,
+	"p_pseudoaligned": 53.7,
+	"p_unique": 30.0,
+	"kallisto_version": "0.46.0",
+	"index_version": 10,
+	"start_time": "Sun Sep 21 16:18:30 2025",
+	"call": "kallisto quant -i /broad/blainey_lab_storage/MN/20250122_AA_Tcell_in_vivo_SS2_ATAC_nextseq/kallisto_AA_custom_index/kallisto_AA_custom_index.idx -o /broad/hptmp/mnajia/AA/kallisto_output/SS2_Donor03_CD8T_CD19-CAR-CD25_rep1/KALLISTO /broad/hptmp/mnajia/AA/fastq/SS2_Donor03_CD8T_CD19-CAR-CD25_rep1_S23_R1_001.fastq.gz /broad/hptmp/mnajia/AA/fastq/SS2_Donor03_CD8T_CD19-CAR-CD25_rep1_S23_R2_001.fastq.gz"
+}

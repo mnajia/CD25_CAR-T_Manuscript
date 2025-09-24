@@ -1,0 +1,15 @@
+
+[quant] fragment length distribution will be estimated from the data
+[index] k-mer length: 31
+[index] number of targets: 41,972
+[index] number of k-mers: 68,421,056
+[index] number of equivalence classes: 126,150
+[quant] running in paired-end mode
+[quant] will process pair 1: /broad/hptmp/mnajia/AA/fastq/SS2_Donor02_CD8T_CD19-CAR-CD25_rep1_S15_R1_001.fastq.gz
+                             /broad/hptmp/mnajia/AA/fastq/SS2_Donor02_CD8T_CD19-CAR-CD25_rep1_S15_R2_001.fastq.gz
+[quant] finding pseudoalignments for the reads ... done
+[quant] processed 989,607 reads, 557,899 reads pseudoaligned
+[quant] estimated average fragment length: 178.518
+[   em] quantifying the abundances ... done
+[   em] the Expectation-Maximization algorithm ran for 1,008 rounds
+
