@@ -1,0 +1,41 @@
+# This project config file describes your project. See looper docs for details.
+name: AA_PB_T_in_vivo_ATAC # The name that summary files will be prefaced with
+
+pep_version: 2.0.0
+sample_table: /broad/blainey_lab_storage/MN/20250122_AA_Tcell_in_vivo_SS2_ATAC_nextseq/samples_annotation.csv # sheet listing all samples in the project
+
+looper:  # relative paths are relative to this config file
+  output_dir: /broad/blainey_lab_storage/MN/20250122_AA_Tcell_in_vivo_SS2_ATAC_nextseq/pepatac_pipeline
+  pipeline_interfaces: /broad/blainey_lab/Mo/pepatac/project_pipeline_interface.yaml  # PATH to the directory where looper will find the pipeline repository. 
+
+sample_modifiers:
+  append:
+    pipeline_interfaces: /broad/blainey_lab/Mo/pepatac/sample_pipeline_interface.yaml
+  #derive:
+  #  attributes: [read1, read2]
+  #  sources:
+  #    test_data_R1: "/broad/blainey_lab/Mo/pepatac/examples/data/{sample_name}_r1.fastq.gz"
+  #    test_data_R2: "/broad/blainey_lab/Mo/pepatac/examples/data/{sample_name}_r2.fastq.gz"
+  imply:
+    - if: 
+        organism: ["human", "Homo sapiens", "Human", "Homo_sapiens"]
+      then: 
+        genome: hg38
+        macs_genome_size: hs
+        prealignments: rCRSd human_repeats
+        aligner: bowtie2         # Default. [options: bwa]
+        deduplicator: samblaster # Default. [options: picard]
+        trimmer: skewer          # Default. [options: pyadapt, trimmomatic]
+        peak_caller: macs2       # Default. [options: fseq, genrich, hmmratac, homer]
+        peak_type: fixed         # Default. [options: variable]
+        extend: "250"            # Default. For fixed-width peaks, extend this distance up- and down-stream.
+        frip_ref_peaks: None     # Default. Use an external reference set of peaks instead of the peaks called from this run
+        blacklist: /broad/blainey_lab/Mo/pepatac/genomes/hg38_blacklist_ENCFF356LFX.bed.gz
+        #sob: True
+
+#bioconductor:
+#  readFunName: readNarrowPeak
+#  readFunPath: readNarrowPeak.R
+#  funcArgs:
+#    output_dir: "$PROCESSED/pepatac/gold" 
+#    results_subdir: "$PROCESSED/pepatac/gold/results_pipeline/" 
